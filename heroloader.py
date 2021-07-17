@@ -2,13 +2,16 @@ import csv
 import os 
 import django 
 
+#Django env settings loader
 os.environ['DJANGO_SETTINGS_MODULE'] = 'marvel.settings'
 django.setup()
-
+ 
+#importing hero model
 from hero.models import Hero
 
 heroes = []
 
+#Saving to database from csv file
 with open( 'hero.csv', "rt", encoding="utf-8") as file:
     
 	reader = csv.reader(file, delimiter=',')

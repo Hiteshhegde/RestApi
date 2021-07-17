@@ -1,9 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse, Http404
-from rest_framework import viewsets 
-from rest_framework import status
+from django.http import HttpResponse
+from rest_framework import generics 
 from rest_framework.views import APIView
-from rest_framework.response import Response
 from .serializers import HeroSerializer
 from .models import Hero
 
@@ -13,29 +11,31 @@ def index(request):
 	return HttpResponse("Hello , This is Heros")
 
 
+#Heroes List view 
+class HeroList(generics.ListAPIView):
 
-class HeroList(APIView):
+	queryset = Hero.objects.all().order_by('name')
+	serializer_class = HeroSerializer
+
+#Hero single detail view
+class HeroDetail(generics.RetrieveAPIView):
+
+	queryset = Hero.objects.all()
+	serializer_class = HeroSerializer
+
+
+#class HeroViewSet(viewsets.ModelViewSet):
 	"""
 	List all heroes here
 
 	"""
-	def get(self, request, format=None):
-		heroes = Hero.objects.all().order_by('name')
-		serializer = HeroSerializer(heroes, many=True)
-		return Response(serializer.data)
+	#def get(self, request, format=None):
+	#queryset = Hero.objects.all().order_by('name')
+	#serializer_class = HeroSerializer
+		#return Response(serializer.data)
 
 
-class HeroDetail(APIView):
-	"""
-	Detail  view of eachhero
-	"""
-	def get_object(self, pk):
-		try:
-			return Hero.objects.get(pk=pk)
-		except Hero.DoesNotExist:
-			raise Http404
 
-	def get(self, request, pk, format=None):
-		hero = self.get_object(pk)
-		serializer = HeroSerializer(hero)
-		return Response(serializer.data)
+
+
+
