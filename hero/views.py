@@ -8,13 +8,12 @@ from .models import Hero
 
 # Create your views here.
 def index(request):
-	return HttpResponse("Hello , This is Heros")
-
+	return render(request, 'index.html')
 
 #Heroes List view 
 class HeroList(generics.ListAPIView):
 
-	queryset = Hero.objects.all().order_by('name')
+	queryset = Hero.objects.all()
 	serializer_class = HeroSerializer
 
 #Hero single detail view

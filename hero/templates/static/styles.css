@@ -1,0 +1,18 @@
+.img-container{
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/107/848/913/spiderman-ps4-spiderman-games-hd-wallpaper-preview.jpg');
+    background: red;
+    height: 400px;
+    border: 1px solid black;
+}
+
+.title{
+ margin: 0 auto;
+ text-align: center;
+ background :linear-gradient(to top, white, rgba(236, 39, 39, 0.3)) ;
+ width: 500px;
+ border-radius: 50px
+ ;
+}
+header{
+    background : linear-gradient(to top, white, red)
+}
