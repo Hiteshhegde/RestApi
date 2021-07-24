@@ -8,7 +8,7 @@ from .models import Hero
 
 # Create your views here.
 def index(request):
-	return render(request, 'index.html')
+	return render(request, 'RestApi/index.html')
 
 #Heroes List view 
 class HeroList(generics.ListAPIView):

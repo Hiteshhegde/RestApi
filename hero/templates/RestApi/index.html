@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  {% load static %}
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="./static/styles.css">
+  <link rel="stylesheet" href="{% static 'RestApi/styles.css' %}">
     <title>Marvel Heroes</title>
 </head>
 <body>
@@ -16,10 +17,13 @@
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="./assets/hulk.png" class="d-block w-100" alt="...">
+        <img src="{% static 'RestApi/blwd.png' %}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item ">
-        <img src="./assets/ironman.jpg" class="d-block w-100" alt="...">
+        <img src="{% static 'RestApi/hulk.png' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item ">
+        <img src="{% static 'RestApi/ironman.png' %}" class="d-block w-100" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

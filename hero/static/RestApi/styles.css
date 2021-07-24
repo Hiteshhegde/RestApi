@@ -1,0 +1,14 @@
+
+.title{
+ margin: 0 auto;
+ text-align: center;
+ background :linear-gradient(to top, white, rgba(236, 39, 39, 0.3)) ;
+ width: 500px;
+ border-radius: 50px
+ ;
+}
+header{
+    background : linear-gradient(to top, white, red)
+}
+
+
